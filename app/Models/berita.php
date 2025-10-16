@@ -9,16 +9,16 @@ class Berita extends Model
 {
     private static $data_berita = [
         [
-            "judul" => "Berita Pemalang Racing",
-            "slug" => "berita-pemalang-racing",
+            "judul" => "Berita Semarang Racing Club",
+            "slug" => "berita-Club-racing-Semarang",
             "penulis" => "Tukiman",
             "konten" => "Pembangunan City walk di daerah Pemalang Jawa Tengah",
         ],
         [
-            "judul" => "Berita Pemalang Morat Marit",
+            "judul" => "Berita Semarang Kreak",
             "slug"=> "berita-pemalang-morat-marit",
             "penulis" => "Saen",
-            "konten" => "Penangkapan Hacker Bjorka",
+            "konten" => "Penangkapan kreak terjadi di meteseh",
         ],
         [
             "judul" => "Berita Odgj di Rumah Sakit Jiwa",
