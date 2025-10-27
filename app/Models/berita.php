@@ -9,22 +9,22 @@ class Berita extends Model
 {
     private static $data_berita = [
         [
-            "judul" => "Berita Semarang Racing Club",
-            "slug" => "berita-Club-racing-Semarang",
-            "penulis" => "Tukiman",
-            "konten" => "Pembangunan City walk di daerah Pemalang Jawa Tengah",
+            "judul" => "Barcelona Kalah dalam Laga Liga Spanyol",
+            "slug" => "barcelona-kalah-liga-spanyol",
+            "penulis" => "Rizky Adi",
+            "konten" => "Barcelona menelan kekalahan 1-2 dari Real Madrid dalam laga El Clasico terakhir. Kekalahan ini membuat posisi Barcelona di klasemen semakin terancam.",
         ],
         [
-            "judul" => "Berita Semarang Kreak",
-            "slug"=> "berita-pemalang-morat-marit",
-            "penulis" => "Saen",
-            "konten" => "Penangkapan kreak terjadi di meteseh",
+            "judul" => "Manchester United Menang Beruntun",
+            "slug" => "manchester-united-menang-beruntun",
+            "penulis" => "Siti Rahma",
+            "konten" => "Manchester United kembali meraih kemenangan 3-1 atas Liverpool di Premier League, memperpanjang tren positif mereka menjadi tiga kemenangan beruntun.",
         ],
         [
-            "judul" => "Berita Odgj di Rumah Sakit Jiwa",
-            "slug"=> "berita-odgj-di-rumah-sakit-jiwa",
-            "penulis" => "Munawaroh",
-            "konten" => "Odgj ditemukan di Rumah Sakit Jiwa",
+            "judul" => "King Manchester United is Back",
+            "slug" => "king-manchester-united-is-back",
+            "penulis" => "Budi Santoso",
+            "konten" => "Manchester United menunjukkan performa luar biasa dengan kemenangan beruntun, membuat penggemar yakin bahwa 'King Manchester United is back' di Premier League musim ini.",
         ],
     ];
 
@@ -35,17 +35,14 @@ class Berita extends Model
 
     public static function caridata($slug)
     {
-        $data_beritas = Self::$data_berita;
-
-        $new_berita = [];
-        foreach($data_beritas as $berita) 
+        foreach(self::$data_berita as $berita) 
         {
             if($berita["slug"] === $slug)
             {
-                $new_berita = $berita;
+                return $berita;
             }
         }
 
-        return $new_berita;
+        return null; // jika tidak ditemukan
     }
 }

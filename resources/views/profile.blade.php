@@ -5,5 +5,5 @@
 
 <h3>{{ $nama }}</h3>
 <p>{{ $nohp }}</p>
-<img src="{{ $foto }}" alt="Foto Profil" style="max-width: 200px;">
+<img src="{{ $foto }}" alt="Foto Profil" style="max-width: 400px;">
 @endsection
