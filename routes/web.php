@@ -3,16 +3,16 @@
 use App\Http\Controllers\BeritaController;
 use App\Models\Berita;  
 use App\Http\Controllers\MahasiswaController;
-
-
 use Illuminate\Support\Facades\Route;
 
+// HALAMAN HOME
 Route::get('/', function () {
     return view('home', [
         "title" => "home",
     ]);
 });
 
+// HALAMAN PROFILE
 Route::get('/profile', function () {
     return view('profile',[
         "title" => "profile",
@@ -22,20 +22,22 @@ Route::get('/profile', function () {
     ]);
 });
 
+// BERITA
 Route::get('/berita', [BeritaController::class,'index']);
+Route::get('/berita/{slug}', [BeritaController::class, 'phptampildata']);
 
-
-Route::get('/berita/{slug}', [BeritaController::class, 'phptampildata']); 
-
+// MAHASISWA
 Route::get('/mahasiswa', [MahasiswaController::class,'index'])->name('mahasiswa');
-
 Route::get('/tambahmahasiswa', [MahasiswaController::class,'tambahmahasiswa'])->name('tambahmahasiswa');
-
 Route::post('/insertdata', [MahasiswaController::class,'insertdata'])->name('insertdata');
 
+// EDIT MAHASISWA
+Route::get('/tampildataedit/{id}', [MahasiswaController::class,'tampildata'])->name('tampildata');
+Route::post('/editdata/{id}', [MahasiswaController::class,'editdata'])->name('editdata');
+
+// HALAMAN CONTACT
 Route::get('/contact', function () {
     return view('contact', [
         "title" => "contact",
-        
     ]);
 });
